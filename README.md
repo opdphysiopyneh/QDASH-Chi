@@ -1,9 +1,9 @@
 # QDASH-Chi
 
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>QuickDASH Outcome Measure</title>
+  <title>上肢功能受損程度問卷（Chinese QuickDASH）</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
   <style>
     :root {
@@ -29,7 +29,7 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "PingFang HK", "PingFang TC", "Noto Sans TC", sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
       margin: 0;
@@ -57,7 +57,7 @@
     }
 
     .main-title {
-      font-size: clamp(1.35rem, 5.2vw, 1.75rem);
+      font-size: clamp(1.4rem, 5.5vw, 1.85rem);
       font-weight: 800;
       margin: 0 0 8px 0;
       color: var(--text-main);
@@ -252,13 +252,13 @@
 
 <div class="container">
   <div class="header-card">
-    <h1 class="main-title">QuickDASH Outcome Measure</h1>
-    <p class="instruction">Please select the single option that best describes your condition <strong>in the past week</strong>.</p>
+    <h1 class="main-title">上肢功能受損程度問卷<br>（QuickDASH）</h1>
+    <p class="instruction">請根據你<strong>過去一星期</strong>的情況，選擇最符合你能力或症狀的描述。</p>
   </div>
 
   <form id="dashForm">
     <div id="questions"></div>
-    <button type="button" class="calc-btn" onclick="calculateQDASH()">Calculate Assessment Result</button>
+    <button type="button" class="calc-btn" onclick="calculateQDASH()">計算評估結果</button>
   </form>
 
   <div id="warning" class="warning" aria-live="assertive"></div>
@@ -266,42 +266,50 @@
 
 <div id="scoreModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal-content">
-    <h2 id="modalTitle">Assessment Result</h2>
+    <h2 id="modalTitle">評估結果</h2>
     <p id="rawScoreText" style="font-size: 1.25rem; margin: 8px 0; color: var(--text-muted);"></p>
     <p id="finalScoreText" style="font-size: 2.2rem; font-weight: 800; color: var(--primary); margin: 10px 0;"></p>
-    <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.45;">The lower the QuickDASH score, the better.<br>(0 represents no disability, 100 represents most severe disability)</p>
+    <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 14px; line-height: 1.45;">QuickDASH 分數越低越好<br>（0 代表最佳功能，100 代表最嚴重失能）</p>
 
     <div class="notice-box">
-      Please do not leave this page and present it to your therapist.<br>
-      Alternatively, you may take a screenshot.<br>
-      Thank you.
+      請不要離開此畫面，並出示給您的治療師。<br>
+      您亦可以進行螢幕截圖。<br>
+      謝謝。
     </div>
     
-    <button type="button" class="close-btn" onclick="closeModal()">Close</button>
+    <button type="button" class="close-btn" onclick="closeModal()">關閉</button>
   </div>
 </div>
 
 <script>
-const questions = [
-  "1. Open a tight or new jar.",
-  "2. Do heavy household chores (e.g., wash walls, floors).",
-  "3. Carry a shopping bag or briefcase.",
-  "4. Wash your back.",
-  "5. Use a knife to cut food.",
-  "6. Recreational activities requiring force/impact through the arm (e.g., golf, hammering, tennis).",
-  "7. Extent your arm/shoulder/hand problem interfered with social activities.",
-  "8. Limitation in work or daily activities due to arm/shoulder/hand problem.",
-  "9. Arm, shoulder or hand pain.",
-  "10. Tingling (pins and needles) in your arm, shoulder or hand.",
-  "11. Difficulty sleeping due to arm/shoulder/hand pain."
+const difficultyLabels = [
+  "沒有困難",
+  "少許困難",
+  "中度困難",
+  "非常困難",
+  "不能做到"
 ];
 
-const labels = [
-  "1 – No difficulty / None",
-  "2 – Mild difficulty / Mild",
-  "3 – Moderate difficulty / Moderate",
-  "4 – Severe difficulty / Severe",
-  "5 – Unable / Extreme"
+const severityLabels = [
+  "沒有",
+  "輕微",
+  "中度",
+  "嚴重",
+  "極度"
+];
+
+const questions = [
+  { title: "1. 扭開緊或新的瓶蓋", options: difficultyLabels },
+  { title: "2. 做消耗大量體力的家務（例如：抹窗或洗擦地板）", options: difficultyLabels },
+  { title: "3. 攜帶購物袋或公事包", options: difficultyLabels },
+  { title: "4. 清洗背部", options: difficultyLabels },
+  { title: "5. 用刀切食物", options: difficultyLabels },
+  { title: "6. 進行需要上肢發力或承受衝力的餘閒活動（如高爾夫、排球、網球等）", options: difficultyLabels },
+  { title: "7. 因肩膊、手臂或手部問題影響社交活動的程度", options: difficultyLabels },
+  { title: "8. 因肩膊、手臂或手部問題影響工作或日常活動的程度", options: severityLabels },
+  { title: "9. 肩膊、手臂或手部的痛楚程度", options: severityLabels },
+  { title: "10. 肩膊、手臂或手部的針刺感覺程度", options: severityLabels },
+  { title: "11. 因肩膊、手臂或手部痛楚引致睡眠困難的程度", options: difficultyLabels }
 ];
 
 const questionsDiv = document.getElementById("questions");
@@ -317,7 +325,7 @@ questions.forEach((q, index) => {
 
   const title = document.createElement("div");
   title.className = "question-title";
-  title.textContent = q;
+  title.textContent = q.title;
   header.appendChild(title);
 
   card.appendChild(header);
@@ -325,14 +333,15 @@ questions.forEach((q, index) => {
   const optionsGroup = document.createElement("div");
   optionsGroup.className = "options-group";
 
-  for (let i = 1; i <= 5; i++) {
+  q.options.forEach((optText, i) => {
+    const value = i + 1;
     const label = document.createElement("label");
     label.className = "option-item";
 
     const radio = document.createElement("input");
     radio.type = "radio";
     radio.name = `q${qNum}`;
-    radio.value = i;
+    radio.value = value;
     radio.className = "hidden-radio";
 
     radio.addEventListener("change", () => {
@@ -346,13 +355,13 @@ questions.forEach((q, index) => {
 
     const text = document.createElement("span");
     text.className = "option-text";
-    text.textContent = labels[i - 1];
+    text.textContent = optText;
 
     label.appendChild(radio);
     label.appendChild(dot);
     label.appendChild(text);
     optionsGroup.appendChild(label);
-  }
+  });
 
   card.appendChild(optionsGroup);
   questionsDiv.appendChild(card);
@@ -368,7 +377,7 @@ function calculateQDASH() {
   for (let i = 1; i <= 11; i++) {
     const selected = document.querySelector(`input[name="q${i}"]:checked`);
     if (!selected) {
-      warning.textContent = `Please complete Question ${i} before calculating.`;
+      warning.textContent = `請先完成第 ${i} 題後再計算分數。`;
       const card = document.getElementById(`card-q${i}`);
       if (card) {
         card.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -379,11 +388,11 @@ function calculateQDASH() {
     count++;
   }
 
-  // QuickDASH Formula: [ (sum of completed items / n) - 1 ] × 25
+  // QuickDASH 公式: [ (總分 / 回答題數) - 1 ] × 25
   const mean = total / count;
   const finalScore = ((mean - 1) * 25).toFixed(1);
 
-  document.getElementById("rawScoreText").innerHTML = `Raw Total Score: <strong>${total}</strong> / 55`;
+  document.getElementById("rawScoreText").innerHTML = `原始分數總和：<strong>${total}</strong> / 55`;
   document.getElementById("finalScoreText").innerHTML = `${finalScore}`;
 
   const modal = document.getElementById("scoreModal");
