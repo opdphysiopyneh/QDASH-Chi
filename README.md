@@ -37,48 +37,49 @@
       color: var(--text-main);
       margin: 0;
       padding: env(safe-area-inset-top, 12px) 14px calc(36px + env(safe-area-inset-bottom, 20px)) 14px;
-      font-size: clamp(16px, 4.5vw, 18px);
-      line-height: 1.5;
+      font-size: clamp(17px, 4.8vw, 20px);
+      line-height: 1.45;
     }
 
     .container {
       width: 100%;
-      max-width: 620px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
     .header-card {
       background: var(--card-bg);
-      border-radius: 18px;
-      padding: 20px 16px;
-      margin-bottom: 16px;
+      border-radius: 16px;
+      padding: 16px 14px;
+      margin-top: 6px;
+      margin-bottom: 14px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
       border: 1px solid var(--border);
     }
 
     .main-title {
-      font-size: clamp(1.35rem, 5.2vw, 1.75rem);
+      font-size: clamp(1.4rem, 5.5vw, 1.85rem);
       font-weight: 800;
-      margin: 0 0 10px 0;
+      margin: 0 0 8px 0;
       color: var(--text-main);
-      line-height: 1.3;
+      line-height: 1.25;
       white-space: pre-line;
     }
 
     .instruction {
-      font-size: clamp(0.95rem, 3.8vw, 1.1rem);
-      color: #3C3C43;
+      font-size: clamp(1.05rem, 4.2vw, 1.2rem);
+      color: var(--text-muted);
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .nprs-card {
       background: var(--card-bg);
       border-radius: 16px;
-      padding: 18px 16px;
+      padding: 18px 14px;
       margin-bottom: 14px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
       border: 1.5px solid var(--border);
     }
 
@@ -130,7 +131,7 @@
       display: flex;
       justify-content: space-between;
       margin-top: 10px;
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       font-weight: 700;
     }
 
@@ -147,9 +148,9 @@
     .question-card {
       background: var(--card-bg);
       border-radius: 16px;
-      padding: 18px 16px;
+      padding: 18px 14px;
       margin-bottom: 14px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
       border: 1.5px solid var(--border);
       transition: border-color 0.2s, background-color 0.2s;
     }
@@ -166,29 +167,28 @@
     }
 
     .question-title {
-      font-size: clamp(1.05rem, 4.2vw, 1.25rem);
+      font-size: clamp(1.2rem, 4.8vw, 1.4rem);
       font-weight: 700;
       color: var(--text-main);
-      line-height: 1.4;
+      line-height: 1.35;
       margin-bottom: 12px;
     }
 
     .options-group {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 10px;
     }
 
     .option-item {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding: 12px 14px;
-      border-radius: 12px;
+      padding: 14px 14px;
+      border-radius: 14px;
       background: #F8F8FA;
       border: 2px solid transparent;
       cursor: pointer;
-      font-size: clamp(1rem, 4vw, 1.15rem);
+      font-size: clamp(1.05rem, 4.2vw, 1.2rem);
       color: #1C1C1E;
       transition: all 0.15s ease-in-out;
       user-select: none;
@@ -207,34 +207,35 @@
     }
 
     .custom-radio {
-      width: 20px;
-      height: 20px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       border: 2px solid #8E8E93;
-      margin-right: 10px;
+      margin-right: 12px;
       flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       background: #FFF;
-      transition: all 0.15s ease;
+      transition: border-color 0.15s, background-color 0.15s;
     }
 
     .option-item.selected .custom-radio {
       border-color: var(--primary);
+      background: var(--primary);
     }
 
     .option-item.selected .custom-radio::after {
       content: "";
       width: 10px;
       height: 10px;
+      background: #FFF;
       border-radius: 50%;
-      background: var(--primary);
     }
 
     .option-text {
       flex-grow: 1;
-      line-height: 1.35;
+      line-height: 1.4;
     }
 
     .hidden-radio {
@@ -244,12 +245,12 @@
     }
 
     .calc-btn {
-      margin-top: 20px;
+      margin-top: 16px;
       padding: 18px;
       width: 100%;
       background: var(--primary);
       color: #FFFFFF;
-      font-size: clamp(1.15rem, 4.5vw, 1.3rem);
+      font-size: clamp(1.2rem, 5vw, 1.35rem);
       font-weight: 700;
       border: none;
       border-radius: 16px;
@@ -278,17 +279,17 @@
 
     .modal-content {
       background: #FFFFFF;
-      padding: 26px 20px;
-      border-radius: 24px;
+      padding: 24px 18px;
+      border-radius: 22px;
       width: 100%;
-      max-width: 420px;
+      max-width: 400px;
       text-align: center;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.25);
     }
 
     .modal-content h2 {
-      margin: 0 0 14px 0;
-      font-size: 1.5rem;
+      margin: 0 0 12px 0;
+      font-size: 1.6rem;
     }
 
     .result-block {
@@ -305,7 +306,7 @@
     }
 
     .result-val {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 800;
       color: var(--primary);
       margin: 0;
@@ -316,25 +317,19 @@
       border: 1.5px solid #FFD666;
       padding: 14px;
       margin: 16px 0;
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       color: #874D00;
       border-radius: 12px;
       line-height: 1.5;
-      font-weight: 600;
-    }
-
-    .modal-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
+      font-weight: 700;
     }
 
     .close-btn {
       width: 100%;
-      padding: 15px;
+      padding: 16px;
       background: #1C1C1E;
       color: #FFF;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       font-weight: 700;
       border: none;
       border-radius: 14px;
@@ -386,20 +381,18 @@
     <div class="result-block">
       <p class="result-label" id="modalScoreTitle">QuickDASH 上肢功能受損指數</p>
       <p id="modalScoreValue" class="result-val">0 分</p>
-      <p id="modalScoreSubtitle" style="font-size: 0.9rem; margin: 4px 0 0 0; color: var(--text-muted);"></p>
+      <p id="modalScoreSubtitle" style="font-size: 0.95rem; margin: 4px 0 0 0; color: var(--text-muted);"></p>
     </div>
 
-    <p id="modalScoreNote" style="font-size: 0.9rem; color: var(--text-muted); margin: 8px 0 12px 0;"></p>
+    <p id="modalScoreNote" style="font-size: 0.95rem; color: var(--text-muted); margin: 8px 0 12px 0;"></p>
 
     <div class="notice-box">
       請不要離開此畫面，並出示給您的治療師。<br>
-      您亦可以進行螢幕截圖儲存。<br>
+      您亦可以進行螢幕截圖。<br>
       謝謝。
     </div>
     
-    <div class="modal-actions">
-      <button type="button" class="close-btn" onclick="closeModal()">關閉</button>
-    </div>
+    <button type="button" class="close-btn" onclick="closeModal()">關閉</button>
   </div>
 </div>
 
@@ -423,7 +416,7 @@ const severityLabels = [
 const CONFIG = {
   title: "上肢功能受損程度問卷\n（QuickDASH）",
   instruction: "請根據你<strong>過去一星期</strong>的情況，選擇最符合你能力或症狀的描述。",
-  scoreNote: "QuickDASH 分數越低越好（0 分代表最佳功能，100 分代表最嚴重失能）",
+  scoreNote: "QuickDASH 分數越低越好<br>（0 代表最佳功能，100 代表最嚴重失能）",
   enableNprs: true,
   items: [
     { title: "扭開緊或新的瓶蓋", options: difficultyLabels },
@@ -447,7 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function initQuestionnaire() {
   document.getElementById("formTitle").textContent = CONFIG.title;
   document.getElementById("formInstruction").innerHTML = CONFIG.instruction;
-  document.getElementById("modalScoreNote").textContent = CONFIG.scoreNote || "";
+  document.getElementById("modalScoreNote").innerHTML = CONFIG.scoreNote || "";
 
   if (CONFIG.enableNprs) {
     document.getElementById("nprsCard").style.display = "block";
