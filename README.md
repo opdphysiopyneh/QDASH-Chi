@@ -440,7 +440,7 @@ const q11SleepImpactLabels = [
 const CONFIG = {
   title: "上肢功能受損程度問卷\n（QuickDASH）",
   instruction: "請根據你<strong>過去一星期</strong>的情況，選擇最符合你能力或症狀的描述。",
-  scoreNote: "QuickDASH 分數越低越好<br>（0 代表最佳功能，100 代表最嚴重失能）",
+  scoreNote: "QuickDASH 分數越低越好<br>（0 分代表最佳功能，100 分代表最嚴重失能）",
   enableNprs: true,
   items: [
     { title: "扭開緊或新的瓶蓋", options: difficultyLabels },
@@ -449,8 +449,8 @@ const CONFIG = {
     { title: "清洗背部", options: difficultyLabels },
     { title: "用刀切食物", options: difficultyLabels },
     { title: "進行需要上肢發力或承受衝力的餘閒活動（如高爾夫、排球、網球等）", options: difficultyLabels },
-    { title: "過去一星期,因肩膊、手臂或手部問題影響社交活動的程度", options: q7SocialImpactLabels },
-    { title: "過去一星期,因肩膊、手臂或手部問題限制工作或日常起居活動", options: q8ActivityLimitationLabels },
+    { title: "過去一星期，因肩膊、手臂或手部問題影響社交活動的程度", options: q7SocialImpactLabels },
+    { title: "過去一星期，因肩膊、手臂或手部問題限制工作或日常起居活動", options: q8ActivityLimitationLabels },
     { title: "肩膊、手臂或手部的痛楚程度", options: severityLabels },
     { title: "肩膊、手臂或手部的針刺感覺程度", options: severityLabels },
     { title: "因肩膊、手臂或手部痛楚引致睡眠困難的程度", options: q11SleepImpactLabels }
@@ -572,7 +572,7 @@ function submitAssessment() {
     document.getElementById("modalNprsText").textContent = `${nprsVal} / 10 分`;
   }
 
-  document.getElementById("modalScoreValue").textContent = `${roundedScore} %`;
+  document.getElementById("modalScoreValue").textContent = `${roundedScore} 分`;
   document.getElementById("modalScoreSubtitle").innerHTML = `原始分數總和：<strong>${total}</strong> / 55（未四捨五入：${rawScore.toFixed(1)} 分）`;
 
   const modal = document.getElementById("scoreModal");
