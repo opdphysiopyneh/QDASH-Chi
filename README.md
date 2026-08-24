@@ -444,7 +444,7 @@ const CONFIG = {
   enableNprs: true,
   items: [
     { title: "扭開緊或新的瓶蓋", options: difficultyLabels },
-    { title: "做消耗大量體力的家務（例如：抹窗或洗擦地板）", options: difficultyLabels },
+    { title: "做消耗大量體力的家務（例如：抹窗或洗地）", options: difficultyLabels },
     { title: "攜帶購物袋或公事包", options: difficultyLabels },
     { title: "清洗背部", options: difficultyLabels },
     { title: "用刀切食物", options: difficultyLabels },
