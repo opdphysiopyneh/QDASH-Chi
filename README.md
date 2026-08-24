@@ -425,8 +425,8 @@ const CONFIG = {
     { title: "清洗背部", options: difficultyLabels },
     { title: "用刀切食物", options: difficultyLabels },
     { title: "進行需要上肢發力或承受衝力的餘閒活動（如高爾夫、排球、網球等）", options: difficultyLabels },
-    { title: "因肩膊、手臂或手部問題影響社交活動的程度", options: difficultyLabels },
-    { title: "因肩膊、手臂或手部問題影響工作或日常活動的程度", options: severityLabels },
+    { title: "過去一星期,因肩膊、手臂或手部問題影響社交活動的程度", options: difficultyLabels },
+    { title: "過去一星期,因肩膊、手臂或手部問題限制工作或日常起居活動", options: severityLabels },
     { title: "肩膊、手臂或手部的痛楚程度", options: severityLabels },
     { title: "肩膊、手臂或手部的針刺感覺程度", options: severityLabels },
     { title: "因肩膊、手臂或手部痛楚引致睡眠困難的程度", options: difficultyLabels }
