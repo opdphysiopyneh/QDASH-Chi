@@ -405,12 +405,36 @@ const difficultyLabels = [
   { key: "5", value: 5, label: "不能做到" }
 ];
 
+const q7SocialImpactLabels = [
+  { key: "1", value: 1, label: "完全沒有影響" },
+  { key: "2", value: 2, label: "輕微影響" },
+  { key: "3", value: 3, label: "中度影響" },
+  { key: "4", value: 4, label: "頗有影響" },
+  { key: "5", value: 5, label: "嚴重影響" }
+];
+
+const q8ActivityLimitationLabels = [
+  { key: "1", value: 1, label: "完全沒有限制" },
+  { key: "2", value: 2, label: "輕微限制" },
+  { key: "3", value: 3, label: "中度限制" },
+  { key: "4", value: 4, label: "頗有限制" },
+  { key: "5", value: 5, label: "做不到" }
+];
+
 const severityLabels = [
   { key: "1", value: 1, label: "沒有" },
   { key: "2", value: 2, label: "輕微" },
   { key: "3", value: 3, label: "中度" },
   { key: "4", value: 4, label: "嚴重" },
   { key: "5", value: 5, label: "極度" }
+];
+
+const q11SleepImpactLabels = [
+  { key: "1", value: 1, label: "沒有影響" },
+  { key: "2", value: 2, label: "輕微影響" },
+  { key: "3", value: 3, label: "中度影響" },
+  { key: "4", value: 4, label: "很大影響" },
+  { key: "5", value: 5, label: "極大影響至不能入睡" }
 ];
 
 const CONFIG = {
@@ -425,11 +449,11 @@ const CONFIG = {
     { title: "清洗背部", options: difficultyLabels },
     { title: "用刀切食物", options: difficultyLabels },
     { title: "進行需要上肢發力或承受衝力的餘閒活動（如高爾夫、排球、網球等）", options: difficultyLabels },
-    { title: "過去一星期,因肩膊、手臂或手部問題影響社交活動的程度", options: difficultyLabels },
-    { title: "過去一星期,因肩膊、手臂或手部問題限制工作或日常起居活動", options: severityLabels },
+    { title: "過去一星期,因肩膊、手臂或手部問題影響社交活動的程度", options: q7SocialImpactLabels },
+    { title: "過去一星期,因肩膊、手臂或手部問題限制工作或日常起居活動", options: q8ActivityLimitationLabels },
     { title: "肩膊、手臂或手部的痛楚程度", options: severityLabels },
     { title: "肩膊、手臂或手部的針刺感覺程度", options: severityLabels },
-    { title: "因肩膊、手臂或手部痛楚引致睡眠困難的程度", options: difficultyLabels }
+    { title: "因肩膊、手臂或手部痛楚引致睡眠困難的程度", options: q11SleepImpactLabels }
   ]
 };
 
