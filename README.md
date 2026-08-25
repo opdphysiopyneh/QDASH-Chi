@@ -440,7 +440,6 @@ const q11SleepImpactLabels = [
 const CONFIG = {
   title: "上肢功能受損程度問卷\n（QuickDASH）",
   instruction: "請根據你<strong>過去一星期</strong>的情況，選擇最符合你能力或症狀的描述。",
-  scoreNote: "QuickDASH 分數越低越好<br>（0 分代表最佳功能，100 分代表最嚴重失能）",
   enableNprs: true,
   items: [
     { title: "扭開緊或新的瓶蓋", options: difficultyLabels },
