@@ -571,7 +571,7 @@ function submitAssessment() {
     document.getElementById("modalNprsText").textContent = `${nprsVal} / 10 分`;
   }
 
-  document.getElementById("modalScoreValue").textContent = `${roundedScore} 分`;
+  document.getElementById("modalScoreValue").textContent = `${roundedScore} %`;
   document.getElementById("modalScoreSubtitle").innerHTML = `原始分數總和：<strong>${total}</strong> / 55（未四捨五入：${rawScore.toFixed(1)} 分）`;
 
   const modal = document.getElementById("scoreModal");
